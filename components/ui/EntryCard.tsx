@@ -26,7 +26,7 @@ export const EntryCard: FC<Props> = ({ entry }) => {
 
   return (
     <Card
-      sx={{ marginBottom: 1 }}
+      sx={{ marginBottom: 1, borderRadius: '0.5rem' }}
       draggable
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}>

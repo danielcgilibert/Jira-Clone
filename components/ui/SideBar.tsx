@@ -11,6 +11,7 @@ import {
 import { Box } from '@mui/system'
 import { FC, useContext } from 'react'
 import { UIContext } from '../../context/ui'
+import { NewEntry } from './NewEntry'
 const MenuItems: string[] = ['Inbox', 'Starred', 'Send Email', 'Drafts']
 export const SideBar: FC = () => {
   const { sideMenuOpen, closeSideMenu } = useContext(UIContext)
@@ -38,6 +39,8 @@ export const SideBar: FC = () => {
               <ListItemText primary={text} />
             </ListItem>
           ))}
+
+          <NewEntry />
         </List>
       </Box>
     </Drawer>

@@ -1,4 +1,4 @@
-import { List, Paper } from '@mui/material'
+import { List } from '@mui/material'
 import { DragEvent, FC, useContext, useMemo } from 'react'
 import { EntriesContext } from '../../context/entries'
 import { UIContext } from '../../context/ui'
@@ -35,19 +35,19 @@ export const EntryList: FC<Props> = ({ status }) => {
       onDrop={onDropEntry}
       onDragOver={allowOnDrop}
       className={isDragging ? styles.dragging : ''}>
-      <Paper
+      <List
         sx={{
+          opacity: isDragging ? 0.2 : 1,
+          transition: 'all 0.3s',
           height: 'calc(100vh - 250px)',
           overflow: 'scroll',
           backgroundColor: 'transparent',
           padding: '1px 5px',
         }}>
-        <List sx={{ opacity: isDragging ? 0.2 : 1, transition: 'all 0.3s' }}>
-          {entriesByStatus.map(entry => (
-            <EntryCard key={entry._id} entry={entry} />
-          ))}
-        </List>
-      </Paper>
+        {entriesByStatus.map(entry => (
+          <EntryCard key={entry._id} entry={entry} />
+        ))}
+      </List>
     </div>
   )
 }

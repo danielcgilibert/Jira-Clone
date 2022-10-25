@@ -17,7 +17,12 @@ export const Layout: FC<Props> = ({ title = 'Jira-clone', children }) => {
       <NavBar />
       <SideBar />
 
-      <Box sx={{ padding: '10px 20px' }}>{children}</Box>
+      <Box
+        justifyContent="center"
+        alignItems="center"
+        sx={{ padding: '10px 20px', width: '80%', margin: 'auto' }}>
+        {children}
+      </Box>
     </Box>
   )
 }
