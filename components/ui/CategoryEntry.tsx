@@ -1,5 +1,5 @@
 import CircleIcon from '@mui/icons-material/Circle'
-import { Card, CardContent, CardHeader, Grid } from '@mui/material'
+import { capitalize, Card, CardContent, CardHeader, Grid } from '@mui/material'
 import { FC } from 'react'
 import { EntryStatus } from '../../interfaces'
 import { EntryList } from './EntryList'
@@ -18,7 +18,7 @@ export const CategoryEntry: FC<Props> = ({ status, iconColor = '#47BFE1' }) => {
         }}>
         <CardHeader
           avatar={<CircleIcon htmlColor={iconColor} />}
-          title={status.toUpperCase()}
+          title={capitalize(status)}
           titleTypographyProps={{ fontSize: '1.5rem' }}
         />
         <CardContent>
