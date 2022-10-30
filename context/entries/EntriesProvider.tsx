@@ -6,10 +6,12 @@ import { entriesReducer } from './entriesReducer'
 
 export interface EntriesState {
   entries: Entry[]
+  selectedEntry: string
 }
 
 const ENTRIES_INITIAL_STATE: EntriesState = {
   entries: [],
+  selectedEntry: '',
 }
 
 export const EntriesProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -36,12 +38,17 @@ export const EntriesProvider: FC<PropsWithChildren> = ({ children }) => {
     dispatch({ type: '[Entry] Refresh-Data', payload: data })
   }
 
+  const selectEntry = (idEntry: string) => {
+    dispatch({ type: '[Entry] select-entry', payload: idEntry })
+  }
+
   useEffect(() => {
     refreshEntries()
   }, [])
 
   return (
-    <EntriesContext.Provider value={{ ...state, addNewEntry, updateEntry }}>
+    <EntriesContext.Provider
+      value={{ ...state, addNewEntry, updateEntry, selectEntry }}>
       {children}
     </EntriesContext.Provider>
   )

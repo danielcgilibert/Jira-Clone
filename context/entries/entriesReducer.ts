@@ -5,6 +5,7 @@ type EntriesActionType =
   | { type: '[Entry] Add-Entry'; payload: Entry }
   | { type: '[Entry] Updated-Entry'; payload: Entry }
   | { type: '[Entry] Refresh-Data'; payload: Entry[] }
+  | { type: '[Entry] select-entry'; payload: string }
 
 export const entriesReducer = (
   state: EntriesState,
@@ -33,6 +34,12 @@ export const entriesReducer = (
       return {
         ...state,
         entries: [...action.payload],
+      }
+
+    case '[Entry] select-entry':
+      return {
+        ...state,
+        selectedEntry: action.payload,
       }
 
     default:
