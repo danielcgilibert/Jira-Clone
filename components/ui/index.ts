@@ -1,5 +1,7 @@
+export * from './Modal'
 export * from './EntryCard'
 export * from './EntryList'
+export * from './FormEntry'
 export * from './NavBar'
 export * from './NewEntry'
 export * from './SideBar'
