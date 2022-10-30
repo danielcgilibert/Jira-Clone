@@ -5,12 +5,14 @@ export interface UIState {
   sideMenuOpen: boolean
   isAddingEntry: boolean
   isDragging: boolean
+  isOpenModal: boolean
 }
 
 const UI_INITIAL_STATE: UIState = {
   sideMenuOpen: false,
   isAddingEntry: false,
   isDragging: false,
+  isOpenModal: false,
 }
 
 export const UIProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -26,6 +28,9 @@ export const UIProvider: FC<PropsWithChildren> = ({ children }) => {
   const setIsDragging = (isDragging: boolean) =>
     dispatch({ type: 'UI - isDragging', payload: isDragging })
 
+  const setIsOpenModal = (isOpenModal: boolean) =>
+    dispatch({ type: 'UI - isOpenModal', payload: isOpenModal })
+
   return (
     <UIContext.Provider
       value={{
@@ -34,6 +39,7 @@ export const UIProvider: FC<PropsWithChildren> = ({ children }) => {
         closeSideMenu,
         setIsAddingEntry,
         setIsDragging,
+        setIsOpenModal,
       }}>
       {children}
     </UIContext.Provider>
