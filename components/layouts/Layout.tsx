@@ -1,7 +1,7 @@
 import { Box } from '@mui/system'
 import Head from 'next/head'
 import { FC } from 'react'
-import { NavBar, SideBar } from '../ui'
+import { Modal, NavBar, SideBar } from '../ui'
 interface Props {
   title?: string
   children?: React.ReactNode
@@ -16,6 +16,7 @@ export const Layout: FC<Props> = ({ title = 'Jira-clone', children }) => {
 
       <NavBar />
       <SideBar />
+      <Modal />
 
       <Box
         justifyContent="center"

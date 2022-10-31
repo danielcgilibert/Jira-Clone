@@ -1,6 +1,7 @@
 import { Box, Modal as MaterialModal } from '@mui/material'
 import { useContext } from 'react'
 import { UIContext } from '../../context/ui'
+import { FormEntry } from './FormEntry'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -25,7 +26,7 @@ export const Modal = () => {
       aria-describedby="transition-modal-description">
       <Box sx={style}>
         <h1>Modal</h1>
-        {/* <FormEntry /> */}
+        <FormEntry />
       </Box>
     </MaterialModal>
   )
