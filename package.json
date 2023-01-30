@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.16",
     "axios": "^1.2.0",
-    "@mui/material": "^5.10.16",
+    "@mui/material": "^5.11.6",
     "date-fns": "^2.29.3",
     "mongoose": "^6.8.1",
     "next": "13.0.4",
