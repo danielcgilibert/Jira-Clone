@@ -1,29 +1,31 @@
 # Jira-Clone
 
-## 💻 Pré-requisitos
+<img src="public/project.png" alt="Screenshot" />
 
-Antes de comenzar, verifique que tiene los siguientes requisitos :
+## 💻 Prerequisites
 
-- Tener instalado [NodeJS](https://nodejs.org/es/)
-- Tener instalado [Docker](https://www.docker.com/)
+Before getting started, please make sure you have the following requirements:
 
-### 🛠 Usando docker con Jira-Clone (necesario para la base de datos)
+- [NodeJS](https://nodejs.org/es/)
+- [Docker](https://www.docker.com/)
+
+### 🛠 Using Docker with Jira-Clone (required for the database)
 
 ```
 docker-compose up -d
 ```
 
-### Llenar la base de datos con información
+### Fill the database with information
 
-Llamar al endpoint
+Make a request to the endpoint:
 
 ```
 http://localhost:3000/api/seed
 ```
 
-## 🚀 Instalando Jira-Clone
+## 🚀 Installing Jira-Clone
 
-Para usar el proyecto siga estos pasos:
+To use the project, follow these steps:
 
 ```
 git clone https://github.com/danielcgilibert/Jira-Clone.git
